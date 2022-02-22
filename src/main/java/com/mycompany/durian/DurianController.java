@@ -1,4 +1,4 @@
-package com.mycompany.myapp.durian;
+package com.mycompany.durian;
 
 import java.text.DateFormat;
 import java.util.Date;
@@ -15,15 +15,15 @@ import org.springframework.web.bind.annotation.RequestMethod;
  * Handles requests for the application home page.
  */
 @Controller
-public class durianController {
+public class DurianController {
 	
-	private static final Logger logger = LoggerFactory.getLogger(durianController.class);
+	private static final Logger logger = LoggerFactory.getLogger(DurianController.class);
 	
 	/**
 	 * Simply selects the home view to render by returning its name.
 	 */
 
-	@RequestMapping(value = "/durianList", method = RequestMethod.GET)
+	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String durian(Locale locale, Model model) {
 		logger.info("Welcome home! The client locale is {}.", locale);
 		
@@ -34,7 +34,7 @@ public class durianController {
 		
 		model.addAttribute("serverTime", formattedDate );
 		
-		return "durian/durianList";
+		return "durianList";
 	}
 	
 }
